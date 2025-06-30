@@ -1,15 +1,19 @@
 import express from 'express'
 import cors from 'cors'
-import connectToTB from './config/connectToDB.js'
+import connectToDB from './config/connectToDB.js'
 
 const PORT = process.env.PORT
 const app = express()
 
-const { db, collection } = await connectToTB()
+const { db } = await connectToDB()
 
 
 app.get("/", async (req,res) => {
-    res.json({ message: 'GET request successful!' });
+
+    const characters =  db.collection('characters')
+    const name = await characters.find({}).toArray()
+
+    res.json(name);
 })
 
 
