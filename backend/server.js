@@ -1,24 +1,23 @@
-import express from 'express'
-import cors from 'cors'
-import connectToDB from './config/connectToDB.js'
+import express from 'express';
+import cors from 'cors';
+import characterRoutes from './routes/charactersRoutes.js'; 
+import filmRoutes from './routes/filmRoutes.js'; 
+import planetRoutes from './routes/planetRoutes.js'; 
 
-const PORT = process.env.PORT || 5000; 
+const PORT = process.env.PORT;
 const app = express();
 
 app.use(cors()); 
 app.use(express.json());  
 
-const { db } = await connectToDB()
+app.get("/", (req, res) => {
+    res.send("Welcome to the Star Wars API!");
+});
 
-
-app.get("/", async (req,res) => {
-
-    const characters =  db.collection('characters')
-    const name = await characters.find({}).toArray()
-
-    res.json(name);
-})
-
+// Use the routes
+app.use('/api/characters', characterRoutes);  
+app.use('/api/films', filmRoutes);  
+app.use('/api/planets', planetRoutes);  
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
