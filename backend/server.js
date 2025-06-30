@@ -1,20 +1,14 @@
 import express from 'express'
 import cors from 'cors'
 import connectToDB from './config/connectToDB.js'
+import planetsRoutes from './routes/planetRoutes.js'
 
 const PORT = process.env.PORT
 const app = express()
 
 const { db } = await connectToDB()
 
-
-app.get("/", async (req,res) => {
-
-    const characters =  db.collection('characters')
-    const name = await characters.find({}).toArray()
-
-    res.json(name);
-})
+app.use('/api/planets', planetsRoutes)
 
 
 app.listen(PORT, () => {
