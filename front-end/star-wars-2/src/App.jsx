@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CharactersList from './components/CharacterList';
-import PlanetPage from '../../pages/PlanetPage';
-import FilmPage from '../../pages/FilmPage';
-import CharacterPage from '../../pages/CharacterPage';
+import PlanetPage from '../pages/PlanetPage';
+import FilmPage from '../pages/FilmPage';
+import CharacterPage from '../pages/CharacterPage';
 
 function App() {
   return (

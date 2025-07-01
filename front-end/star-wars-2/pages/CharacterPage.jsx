@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import InfoCard from '../star-wars-2/src/components/InfoCard'
+import InfoCard from '../src/components/InfoCard'
 
 const character = () => {
 
