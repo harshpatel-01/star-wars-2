@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const PlanetPage = () => {
@@ -11,6 +11,7 @@ const PlanetPage = () => {
             fetch(`http://localhost:3000/api/planets/${id}`)
             .then((response) => response.json())
             .then((data) => setPlanet(data))
+            console.log(planet)
 
 
         }catch(error){
@@ -20,8 +21,63 @@ const PlanetPage = () => {
     },[])
 
   return (
-    <div>
+    <div className="bg-white p-6 rounded-2xl shadow-lg shadow-gray-100 border-gray-200/50">
+    <h1 className="text-3xl font-bold " id="name"></h1>
+    {console.log(planet)}
+    <svg width="400" height="60" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
       
+      <rect x="10" y="25" width="50" height="10" fill="#333" />
+      <circle cx="15" cy="30" r="3" fill="#999" />
+      <circle cx="25" cy="30" r="2" fill="#999" />
+      
+      
+      <rect x="60" y="27" width="300" height="6" fill="#00f" />
+      
+      
+      <rect x="60" y="22" width="300" height="16" fill="#00f" opacity="0.25" rx="8" />
+    </svg>
+    
+    
+    <p className="text-sm font-normal text-gray-500 dark:text-gray-400">Planetary data...</p>
+    
+    <ul className="my-4 space-y-3">
+      <li>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+          <p>climate: {planet?.climate}</p>
+        </a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+          <p>Surface:  {planet?.surface_water}</p>
+        </a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+          <p>Diameter: {planet?.diameter}m</p>
+        </a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+          <p>Terrain: {planet?.terrain}</p>
+        </a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+          <p>Orbital Period: {planet?.orbital_period}</p>
+        </a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+          <p>Rotation Period: {planet?.rotation_period}</p>
+        </a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+          <p>Population: {planet?.population}</p>
+        </a>
+      </li>
+    </ul>
+    
     </div>
   )
 }
