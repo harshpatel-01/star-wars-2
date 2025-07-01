@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 const CharactersList = () => {
   const [characters, setCharacters] = useState([]);  // State to store characters
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null); 
   const navigate = useNavigate(); 
 
@@ -12,11 +11,9 @@ const CharactersList = () => {
       .then((response) => response.json())
       .then((data) => {
         setCharacters(data); 
-        setLoading(false);  
       })
       .catch((error) => {
         setError('Error fetching characters');
-        setLoading(false);
       });
   }, []); 
 
@@ -25,7 +22,6 @@ const CharactersList = () => {
     navigate(`/character/${id}`);  
   };
 
-  if (loading) return <div>Loading characters...</div>;
   if (error) return <div>{error}</div>;
 
   return (
