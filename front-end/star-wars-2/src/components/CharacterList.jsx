@@ -30,7 +30,10 @@ const CharactersList = () => {
 
   return (
     <div>
-      <h2>Characters</h2>
+      <h1><strong>Star Wars Universe Lookup</strong></h1>
+      <h2><strong>Who are you looking for?</strong></h2>
+      <h2>(Regular Expressions are cool here)</h2>
+  
       <div>
         {characters.length === 0 ? (
           <div>No characters available</div>
@@ -41,13 +44,13 @@ const CharactersList = () => {
               onClick={() => handleCharacterClick(character.id)}  
               style={{ cursor: 'pointer', margin: '10px', border: '1px solid black', padding: '10px' }}
             >
-              {character.name}  {}
+              {character.name}
             </div>
           ))
         )}
       </div>
     </div>
   );
-};
+}  
 
 export default CharactersList;
