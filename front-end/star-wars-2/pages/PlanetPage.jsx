@@ -22,7 +22,7 @@ const PlanetPage = () => {
 
   return (
     <div className="bg-white p-6 rounded-2xl shadow-lg shadow-gray-100 border-gray-200/50">
-    <h1 className="text-3xl font-bold " id="name"></h1>
+    <h1 className="text-3xl font-bold " id="name">{planet?.name}</h1>
     {console.log(planet)}
     <svg width="400" height="60" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
       
@@ -42,38 +42,38 @@ const PlanetPage = () => {
     
     <ul className="my-4 space-y-3">
       <li>
-        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <p>climate: {planet?.climate}</p>
+        <a href="#" className="flex items-center p-3 font-bold ">
+          <p className='text-black'>climate: {planet?.climate}</p>
         </a>
       </li>
       <li>
-        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <p>Surface:  {planet?.surface_water}</p>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg ">
+          <p className='text-black'>Surface:  {planet?.surface_water}</p>
         </a>
       </li>
       <li>
-        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <p>Diameter: {planet?.diameter}m</p>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg ">
+          <p className='text-black'>Diameter: {planet?.diameter}m</p>
         </a>
       </li>
       <li>
-        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <p>Terrain: {planet?.terrain}</p>
+        <a href="#" className="flex items-center p-3 font-bold text-gray-900 rounded-lg ">
+          <p className='text-black'>Terrain: {planet?.terrain}</p>
         </a>
       </li>
       <li>
-        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <p>Orbital Period: {planet?.orbital_period}</p>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg ">
+          <p className='text-black'>Orbital Period: {planet?.orbital_period}</p>
         </a>
       </li>
       <li>
-        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <p>Rotation Period: {planet?.rotation_period}</p>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg ">
+          <p className='text-black'>Rotation Period: {planet?.rotation_period}</p>
         </a>
       </li>
       <li>
-        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-500 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <p>Population: {planet?.population}</p>
+        <a href="#" className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg ">
+          <p className='text-black'>Population: {planet?.population}</p>
         </a>
       </li>
     </ul>
